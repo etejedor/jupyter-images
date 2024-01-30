@@ -69,5 +69,7 @@ RUN ln -s $(pip show sparkconnector | grep -oP 'Location: \K.*')/sparkconnector 
 # Grant scripts execution permissions
 RUN chmod +x /usr/local/bin/before-notebook.d/*
 
+RUN touch /tmp/myfile
+
 # Switch back to jovyan to avoid accidental container runs as root
 USER ${NB_UID}
